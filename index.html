@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gietgenoten – binnenkort</title>
+<meta name="description" content="Gietgenoten: samen je kamerplanten verzorgen. Binnenkort beschikbaar.">
+<link rel="icon" href="icon-512.png">
+<meta property="og:title" content="Gietgenoten – wie giet, geniet">
+<meta property="og:description" content="Samen je kamerplanten verzorgen. Binnenkort beschikbaar.">
+<meta property="og:image" content="icon-512.png">
+<style>
+:root{--bg:#F1F3EE;--surface:#fff;--ink:#1E2A22;--muted:#5B685F;--line:#D6DDD3;--leaf:#2E6B3F;--water:#2470B3;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#131915;--surface:#1C241F;--ink:#E5ECE6;--muted:#9BA89F;--line:#2F3A33;--leaf:#82C796;--water:#73B6EC;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;justify-content:center;padding:32px 20px calc(32px + env(safe-area-inset-bottom,0px))}
+main{max-width:520px;width:100%;text-align:center}
+img{width:112px;height:112px;border-radius:26px;box-shadow:0 10px 30px rgba(46,107,63,.25)}
+.word{font-size:46px;font-weight:800;letter-spacing:-.02em;margin:22px 0 0;line-height:1}
+.word span{color:var(--water)}
+.word b{color:var(--leaf);font-weight:800}
+.tag{font-size:21px;color:var(--muted);margin:10px 0 28px;font-style:italic}
+.soon{display:inline-block;background:var(--leaf);color:var(--bg);font-weight:700;border-radius:99px;padding:8px 18px;font-size:16px;letter-spacing:.02em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;margin-top:28px;text-align:left}
+.card p{margin:0 0 12px}
+ul{margin:0;padding:0;list-style:none}
+li{padding:8px 0 8px 32px;position:relative;border-top:1px solid var(--line)}
+li:first-child{border-top:0}
+li::before{content:"";position:absolute;left:4px;top:15px;width:14px;height:18px;background:var(--water);clip-path:path("M7 0C7 0 0 8 0 12a7 7 0 0 0 14 0C14 8 7 0 7 0Z")}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;margin-top:18px;text-align:left}
+.form h2{font-size:21px;margin:0 0 4px}
+.form p{margin:0 0 12px;color:var(--muted);font-size:16px}
+label.f{display:block;margin-top:12px;font-size:15px;font-weight:600}
+label.f input,label.f textarea{display:block;width:100%;margin-top:6px;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:17px;font-weight:400}
+label.f textarea{min-height:96px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:15px}
+.check input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--leaf)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+button{margin-top:16px;width:100%;border:0;border-radius:14px;background:var(--leaf);color:var(--bg);font:inherit;font-weight:700;padding:14px;cursor:pointer}
+button:disabled{opacity:.6;cursor:default}
+.msg{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:15.5px}
+.msg.ok{background:color-mix(in srgb,var(--leaf) 15%,transparent);color:var(--leaf);font-weight:600}
+.msg.err{background:color-mix(in srgb,#B0502A 15%,transparent);color:#B0502A}
+.small{font-size:13.5px;color:var(--muted);margin-top:12px}
+.small a{color:var(--leaf)}
+:focus-visible{outline:3px solid var(--water);outline-offset:2px}
+footer{margin-top:26px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-512.png" alt="">
+  <h1 class="word"><span>Giet</span><b>genoten</b></h1>
+  <p class="tag">Wie giet, geniet.</p>
+  <span class="soon">Binnenkort beschikbaar</span>
+  <div class="card">
+    <p>De app waarmee je samen met je huisgenoten je kamerplanten in leven houdt.</p>
+    <ul>
+      <li>Precies weten welke plant vandaag water nodig heeft, en hoeveel</li>
+      <li>Eén gedeelde lijst voor het hele huis, met een melding op jouw tijdstip</li>
+      <li>Advies als een plant er niet goed uitziet</li>
+      <li>Een ranglijst: wie is deze maand de beste gietgenoot?</li>
+    </ul>
+  </div>
+  <form class="form" id="form" novalidate>
+    <h2>Als eerste weten wanneer het zover is?</h2>
+    <p>Laat je e-mailadres achter. Heb je een idee voor de app? Dat horen we graag.</p>
+    <label class="f">E-mailadres<input type="email" id="email" autocomplete="email" maxlength="200" required></label>
+    <label class="f">Jouw idee of wens (optioneel)<textarea id="idee" maxlength="1000" placeholder="Bijvoorbeeld: een herinnering om te verpotten"></textarea></label>
+    <div class="hp" aria-hidden="true"><label>Website<input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+    <label class="check"><input type="checkbox" id="ok" required><span>Ik vind het goed dat Gietgenoten mij een e-mail stuurt als de app beschikbaar is.</span></label>
+    <button type="submit" id="send">Aanmelden</button>
+    <div id="msg" role="status"></div>
+    <p class="small">We gebruiken je e-mailadres alleen om je te laten weten wanneer Gietgenoten beschikbaar is, en we delen het met niemand. De gegevens worden in Europa bewaard. Wil je je aanmelding laten verwijderen? Mail naar <a id="contact" href="#"></a>.</p>
+  </form>
+  <footer>© 2026 Gietgenoten</footer>
+</main>
+<script>
+/* Vul hier de gegevens van je Supabase-project in (dezelfde als in de app) */
+const SUPABASE_URL = "https://JOUW-PROJECT.supabase.co";
+const SUPABASE_KEY = "sb_publishable_JOUW_SLEUTEL";
+const CONTACT_EMAIL = "info@gietgenoten.nl";
+
+const $ = id => document.getElementById(id);
+const started = Date.now();
+$("contact").textContent = CONTACT_EMAIL;
+$("contact").href = "mailto:" + CONTACT_EMAIL;
+function show(text, ok) { $("msg").className = "msg " + (ok ? "ok" : "err"); $("msg").textContent = text; }
+function done(text) { $("form").querySelectorAll("label,button").forEach(el => el.style.display = "none"); show(text, true); }
+
+$("form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const email = $("email").value.trim(), idee = $("idee").value.trim();
+  // Robots vullen het onzichtbare veld in of versturen meteen: die krijgen een bedankje, maar er wordt niets opgeslagen.
+  if ($("website").value || Date.now() - started < 3000) { done("Bedankt voor je aanmelding!"); return; }
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { show("Vul een geldig e-mailadres in.", false); $("email").focus(); return; }
+  if (!$("ok").checked) { show("Vink het vakje aan, dan mogen we je een e-mail sturen.", false); return; }
+  $("send").disabled = true; $("send").textContent = "Bezig…";
+  try {
+    const r = await fetch(SUPABASE_URL + "/rest/v1/waitlist", {
+      method: "POST",
+      headers: { apikey: SUPABASE_KEY, "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify({ email, suggestie: idee || null })
+    });
+    if (r.ok) { done("Bedankt! We laten het je weten zodra Gietgenoten beschikbaar is."); return; }
+    const j = await r.json().catch(() => ({}));
+    if (r.status === 409) { done("Je stond al op de lijst. Bedankt voor je enthousiasme!"); return; }
+    if (/te_druk/.test(j.message || "")) show("Het is even druk. Probeer het over een paar minuten opnieuw.", false);
+    else if (/check constraint/.test(j.message || "")) show("Controleer je e-mailadres en probeer het opnieuw.", false);
+    else show("Aanmelden lukte niet. Probeer het later opnieuw.", false);
+  } catch { show("Geen verbinding. Probeer het later opnieuw.", false); }
+  $("send").disabled = false; $("send").textContent = "Aanmelden";
+});
+</script>
+</body>
+</html>
